@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "167f3687-4059-4b74-8186-eae11db5d7a6",
+		"name": "devsu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "9137325",
+		"_collection_link": "https://galactic-resonance-233570.postman.co/workspace/Devsu-LLC~68609b3c-eed1-4cbc-866b-04842563870b/collection/9137325-167f3687-4059-4b74-8186-eae11db5d7a6?action=share&source=collection_link&creator=9137325"
+	},
+	"item": [
+		{
+			"name": "cliente",
+			"item": [
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroCuenta\": \"585545\",\r\n    \"personaId\": 2,\r\n    \"contrasena\": \"1234\",\r\n    \"estado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar - contraseña",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contrasena\": \"5678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/clientes/10"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente-api",
+			"item": [
+				{
+					"name": "New Request",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Saldo Disponible\": 700,\r\n    \"Movimiento\": 600,\r\n    \"Estado\": true,\r\n    \"Saldo Inicial\": 100,\r\n    \"Tipo\": \"Corriente\",\r\n    \"Numero Cuenta\": \"225487\",\r\n    \"Cliente\": \"Marianela Montalvo\",\r\n    \"Fecha\": \"10/2/2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear movimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroCuenta\":\"496825\",\r\n    \"tipoMovimiento\":\"Retiro\",\r\n    \"valor\":-540\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/clientes-api"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuenta",
+			"item": [
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroCuenta\":\"585545\",\r\n    \"tipoCuenta\":\"Corriente\",\r\n    \"saldoInicial\":1000,\r\n    \"estado\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8085/cuentas"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8085/cuentas"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Numero cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/cuentas?numeroCuenta=478758",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"cuentas"
+							],
+							"query": [
+								{
+									"key": "numeroCuenta",
+									"value": "478758"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8085/cuentas/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimiento",
+			"item": [
+				{
+					"name": "Consultar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8085/movimientos"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personas",
+			"item": [
+				{
+					"name": "Consultar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/personas"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/personas?nombre=Jose Lema",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personas"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Jose Lema"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Juan Osorio\",\r\n    \"genero\":\"masculino\",\r\n    \"edad\":21,\r\n    \"identificacion\":\"1720811347\",\r\n    \"direccion\":\"13 junio y Equinoccial\",\r\n    \"telefono\":\"098874587\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/personas"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar - edad",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"edad\":34\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/personas/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar - telefono",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"telefono\":\"097548965\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/personas/3"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
