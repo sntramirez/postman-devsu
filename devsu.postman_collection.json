@@ -87,7 +87,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"numeroCuenta\":\"496825\",\r\n    \"tipoMovimiento\":\"Retiro\",\r\n    \"valor\":-540\r\n}",
+							"raw": "{\r\n    \"numeroCuenta\":\"225487\",\r\n    \"tipoMovimiento\":\"Retiro\",\r\n    \"valor\":-50\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -95,6 +95,39 @@
 							}
 						},
 						"url": "http://localhost:8080/clientes-api"
+					},
+					"response": []
+				},
+				{
+					"name": "reporte",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes-api?createDateFrom=2024-04-26&createDateTo=2024-04-29&identificacion=1720811346",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes-api"
+							],
+							"query": [
+								{
+									"key": "createDateFrom",
+									"value": "2024-04-26"
+								},
+								{
+									"key": "createDateTo",
+									"value": "2024-04-29"
+								},
+								{
+									"key": "identificacion",
+									"value": "1720811346"
+								}
+							]
+						}
 					},
 					"response": []
 				}
@@ -163,6 +196,33 @@
 						"url": "http://localhost:8085/cuentas/1"
 					},
 					"response": []
+				},
+				{
+					"name": "findByCuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/cuentas/search/findByNumeroCuenta?numeroCuenta=225487",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"cuentas",
+								"search",
+								"findByNumeroCuenta"
+							],
+							"query": [
+								{
+									"key": "numeroCuenta",
+									"value": "225487"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -175,6 +235,68 @@
 						"method": "GET",
 						"header": [],
 						"url": "http://localhost:8085/movimientos"
+					},
+					"response": []
+				},
+				{
+					"name": "findByCuenta?cuentaId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/movimientos/search/findByCuenta?cuentaId=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"movimientos",
+								"search",
+								"findByCuenta"
+							],
+							"query": [
+								{
+									"key": "cuentaId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByCuentaFecha",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/movimientos/search/findByCuentaFecha?createDateFrom=2024-04-25&createDateTo=2024-04-29&cuentaId=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"movimientos",
+								"search",
+								"findByCuentaFecha"
+							],
+							"query": [
+								{
+									"key": "createDateFrom",
+									"value": "2024-04-25"
+								},
+								{
+									"key": "createDateTo",
+									"value": "2024-04-29"
+								},
+								{
+									"key": "cuentaId",
+									"value": "7"
+								}
+							]
+						}
 					},
 					"response": []
 				}
